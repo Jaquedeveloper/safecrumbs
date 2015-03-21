@@ -14,5 +14,9 @@
     <string name="title_activity_alert_setup">alert_setup</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">settings</string>
+    <string name="uneasy">Uneasy</string>
+    <string name="unsafe">Unsafe</string>
+    <string name="in_danger">In_Danger</string>
+    <string name="tell_contact">Tell_Contacts</string>
 
 </resources>

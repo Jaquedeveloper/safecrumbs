@@ -4,10 +4,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RadioButton;
+import android.view.View;
 
 
 public class alert_setup extends ActionBarActivity {
-
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,5 +37,26 @@ public class alert_setup extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.uneasy:
+                if (checked)
+                    message = "I'm feeling uneasy";
+                    break;
+            case R.id.unsafe:
+                if (checked)
+                    message = "I'm feeling unsafe";
+                    break;
+            case R.id.in_danger:
+                if (checked)
+                    message = "I'm in danger!!";
+                    break;
+        }
     }
 }
