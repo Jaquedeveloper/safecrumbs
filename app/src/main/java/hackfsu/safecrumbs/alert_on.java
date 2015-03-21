@@ -12,6 +12,8 @@ import android.widget.Button;
 
 public class alert_on extends ActionBarActivity {
     Button button_911;
+    Button check_in;
+    Button alert_off;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,34 @@ public class alert_on extends ActionBarActivity {
         button_911 = (Button) findViewById(R.id.speed_dial_button);
         // add button listener
         button_911.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:5714319430"));
+                startActivity(callIntent);
+
+            }
+
+        });
+        check_in = (Button) findViewById(R.id.check_in_button);
+        // add button listener
+        check_in.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:5714319430"));
+                startActivity(callIntent);
+
+            }
+
+        });
+        alert_off = (Button) findViewById(R.id.alert_off_button);
+        // add button listener
+        alert_off.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {

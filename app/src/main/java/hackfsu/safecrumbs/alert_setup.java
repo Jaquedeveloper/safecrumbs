@@ -28,11 +28,13 @@ public class alert_setup extends ActionBarActivity {
             public void onClick(View arg0) {
 
                 SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage("0000000000", null, message, null, null);
-                smsManager.sendTextMessage("1111111111", null, message, null, null);
+                smsManager.sendTextMessage("8506612415", null, message, null, null);
+                /*smsManager.sendTextMessage("1111111111", null, message, null, null);
                 smsManager.sendTextMessage("2222222222", null, message, null, null);
                 smsManager.sendTextMessage("3333333333", null, message, null, null);
-                smsManager.sendTextMessage("44444444444", null, message, null, null);
+                smsManager.sendTextMessage("44444444444", null, message, null, null);*/
+                Intent intent = new Intent(alert_setup.this, alert_on.class);
+                alert_setup.this.startActivity(intent);
 
             }
 
