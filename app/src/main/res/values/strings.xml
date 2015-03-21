@@ -9,14 +9,17 @@
     <string name="title_activity_main_911">main_911</string>
     <string name="to">to</string>
     <string name="safe_crumbs">safe_crumbs</string>
-    <string name="Setings">settings</string>
+    <string name="Settings">settings</string>
     <string name="alert_setup">alert_setup</string>
     <string name="title_activity_alert_setup">alert_setup</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">settings</string>
-
+    <string name="alert_mode_button">Alert_mode_button</string>
+    <string name="comment">Alert_mode_comment</string>
+    <string name="go_back_button">Go_Back_Button</string>
     <string name="placeholder_search">Search</string>
     <string name="ok">ok</string>
+    <string name="title_activity_alert_on">alert_on</string>
 
 
 
