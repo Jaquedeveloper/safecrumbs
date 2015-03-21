@@ -15,8 +15,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">settings</string>
 
-    <string name="color">#65b4ce</string>
-    <string name="color2">#F93324</string>
+    <string name="placeholder_search">Search</string>
+    <string name="ok">ok</string>
 
 
 

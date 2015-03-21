@@ -21,11 +21,6 @@
             android:name=".main_911"
             android:label="@string/title_activity_main_911" >
         </activity>
-        <activity
-            android:name=".ContactPicker"
-            android:label="activity_contacts_picker"
-            android:parentActivityName=".MainActivity">
-        </activity>
     </application>
 
 </manifest>
