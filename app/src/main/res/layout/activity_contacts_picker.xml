@@ -6,29 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ContactPicker" >
     <Button
-        android1:id="@+id/btnDone"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentBottom="true"
-        android1:layout_alignParentLeft="true"
-        android1:layout_alignParentRight="true"
-        android1:text="@string/done" />
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/done" />
     <EditText
-        android1:id="@+id/txt_searchContact"
-        android1:layout_width="match_parent"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentLeft="true"
-        android1:layout_alignParentTop="true"
-        android1:ems="10"
-        android1:hint="@string/placeholder_search"
-        android1:inputType="text">
+        android:id="@+id/txt_searchContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/placeholder_search"
+        android:inputType="text">
     </EditText>
     <ListView
-        android1:id="@+id/lst_contactList"
-        android1:layout_width="match_parent"
-        android1:layout_height="wrap_content"
-        android1:layout_above="@+id/btnDone"
-        android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/txt_searchContact">
+        android:id="@+id/lst_contactList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnDone"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt_searchContact">
     </ListView>
 </RelativeLayout>
