@@ -9,10 +9,13 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.util.Log;
+import android.view.View.OnClickListener;
 
 
 public class MainActivity extends ActionBarActivity {
     final String preferenceName = "MyPreferenceFile";
+    Button setContacts = (Button)findViewById(R.id.buttonSetContacts);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +53,19 @@ public class MainActivity extends ActionBarActivity {
             Intent intent = new Intent("com.Android.main_911");
             Log.d("Comments", "First time");
             settings.edit().putBoolean("isFirstTime", false).commit();
-
         }else{
             Intent intent = new Intent("com.Android.main_911");
         }
     }
+
+    public void buttonClick(){
+        setContacts.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int request_code = 1010;
+                startActivityForResult(new Intent(CreateContactGroup.this,ContactPicker.class),request_code);
+            }
+        });
+    }
+
 }
