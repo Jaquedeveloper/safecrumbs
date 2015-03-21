@@ -11,6 +11,7 @@
         android:textSize="70dp"
         android:id="@+id/safety_crumbs"
         android:textAlignment="center"
+        android:textColor="@string/color"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -19,10 +20,14 @@
         android:layout_height="wrap_content"
         android:text="9 - 1 - 1"
         android:id="@+id/callButton"
-        android:textSize="30dp"
+        android:textSize="36dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android: android:textColor="@string/color2"
+        android:layout_toLeftOf="@+id/settings"
+        android:layout_toStartOf="@+id/settings"
+        android:layout_alignTop="@+id/settings" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,8 +44,8 @@
         android:id="@+id/alert_setup"
         android:textSize="60dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
