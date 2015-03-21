@@ -4,14 +4,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.SharedPreferences;
+import android.content.Intent;
+import android.content.Context;
+import android.util.Log;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    final String preferenceName = "MyPreferenceFile";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkLogging();
     }
 
 
@@ -35,5 +40,18 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void checkLogging(){
+        SharedPreferences settings = getSharedPreferences(preferenceName, 0);
+        boolean isFirstTime = settings.getBoolean("isFirstTime", true);
+        if (isFirstTime) {
+            //do something when run first time
+            Log.d("Comments", "First time");
+            settings.edit().putBoolean("isFirstTime", false).commit();
+
+        }else{
+            //do something for other than first time
+        }
     }
 }
