@@ -20,7 +20,6 @@
         android:layout_alignParentStart="true"
         android:textSize="20dp" />
 
-    <?xml version="1.0" encoding="utf-8"?>
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -28,7 +27,7 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/radioGroup">
+        android:id="@+id/radioGroup1">
         <RadioButton android:id="@+id/uneasy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,13 +45,32 @@
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 
-    <TextView android:text="Tell contacts if I don't check in within:" android:layout_width="wrap_content"
+    <TextView android:text="Tell contacts if I don't check in within:"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tell_contact"
         android:textSize="20dp"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/radioGroup"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/radioGroup1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tell_contact"
+        android:id="@+id/radioGroup2">
+        <RadioButton android:id="@+id/alert_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 Minutes"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/alert_1hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="An hour"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
 
 </RelativeLayout>

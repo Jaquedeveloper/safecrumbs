@@ -18,5 +18,7 @@
     <string name="unsafe">Unsafe</string>
     <string name="in_danger">In_Danger</string>
     <string name="tell_contact">Tell_Contacts</string>
+    <string name="alert_30">Alert_30</string>
+    <string name="alert_1hr">Alert_1Hr</string>
 
 </resources>
