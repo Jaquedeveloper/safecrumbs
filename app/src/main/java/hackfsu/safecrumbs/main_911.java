@@ -12,15 +12,16 @@ import android.view.View.OnClickListener;
 
 
 public class main_911 extends ActionBarActivity {
-    Button button;
+    Button button_911;
+    Button button_alert_setup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_911);
-        button = (Button) findViewById(R.id.callButton);
+        button_911 = (Button) findViewById(R.id.callButton);
 
         // add button listener
-        button.setOnClickListener(new OnClickListener() {
+        button_911.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {

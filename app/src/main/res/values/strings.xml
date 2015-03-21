@@ -9,4 +9,6 @@
     <string name="title_activity_main_911">main_911</string>
     <string name="to">to</string>
     <string name="safety_crumbs">safety_crumbs</string>
+    <string name="Setings">settings</string>
+    <string name="alert_setup">alert_setup</string>
 </resources>
