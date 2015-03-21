@@ -12,7 +12,7 @@
         android1:layout_alignParentBottom="true"
         android1:layout_alignParentLeft="true"
         android1:layout_alignParentRight="true"
-        android1:text="Done" />
+        android1:text="@string/done" />
     <EditText
         android1:id="@+id/txt_searchContact"
         android1:layout_width="match_parent"

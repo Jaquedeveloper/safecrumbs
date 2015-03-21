@@ -25,6 +25,7 @@
     <string name="check_in_button">Check_In_Button</string>
     <string name="alert_off_button">Alert_Off_Button</string>
 
+    <string name="done">Done</string>
 
 
 </resources>
