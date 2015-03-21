@@ -3,9 +3,23 @@
 
     <string name="app_name">safecrumbs</string>
     <string name="action_settings">Settings</string>
+    <string name="enter">Enter</string>
     <string name="Call_911">Call_911</string>
     <string name="welcome">welcome</string>
     <string name="title_activity_main_911">main_911</string>
     <string name="to">to</string>
     <string name="safety_crumbs">safety_crumbs</string>
+    <string name="Setings">settings</string>
+    <string name="alert_setup">alert_setup</string>
+    <string name="title_activity_alert_setup">alert_setup</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_settings">settings</string>
+    <string name="uneasy">Uneasy</string>
+    <string name="unsafe">Unsafe</string>
+    <string name="in_danger">In_Danger</string>
+    <string name="tell_contact">Tell_Contacts</string>
+    <string name="alert_30">Alert_30</string>
+    <string name="alert_1hr">Alert_1Hr</string>
+    <string name="placeholder_search">Search</string>
+    <string name="ok">ok</string>
 </resources>
