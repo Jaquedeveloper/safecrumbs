@@ -11,4 +11,8 @@
     <string name="safety_crumbs">safety_crumbs</string>
     <string name="Setings">settings</string>
     <string name="alert_setup">alert_setup</string>
+    <string name="title_activity_alert_setup">alert_setup</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_settings">settings</string>
+
 </resources>
