@@ -14,22 +14,12 @@
     <string name="title_activity_alert_setup">alert_setup</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">settings</string>
-
-<<<<<<< HEAD
-    <string name="color">#65b4ce</string>
-    <string name="color2">#F93324</string>
-    <string name="color3">#457AB1</string>
-    <string name="color4">#FFFF00</string>
-    <string name="color5">#F28500</string>
-    <string name="color6">#C6C6C6</string>
-    <string name="color7">#BDD387</string>
-    <string name="color8">#A997C4</string>
-
-
-=======
+    <string name="alert_mode_button">Alert_mode_button</string>
+    <string name="comment">Alert_mode_comment</string>
+    <string name="go_back_button">Go_Back_Button</string>
     <string name="placeholder_search">Search</string>
     <string name="ok">ok</string>
->>>>>>> 7f2598cb650cc8da4aa2f41dc2a54c312bae92a2
+    <string name="title_activity_alert_on">alert_on</string>
 
 
 

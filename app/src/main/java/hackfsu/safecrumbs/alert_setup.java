@@ -1,20 +1,53 @@
 package hackfsu.safecrumbs;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.view.View;
+import android.telephony.SmsManager;
 
 
 public class alert_setup extends ActionBarActivity {
     String message;
     int alert_time;
+    Button alert_mode_button;
+    Button go_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_setup);
+        alert_mode_button = (Button) findViewById(R.id.alert_mode_button);
+        go_back = (Button) findViewById(R.id.go_back_button);
+        alert_mode_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage("0000000000", null, message, null, null);
+                smsManager.sendTextMessage("1111111111", null, message, null, null);
+                smsManager.sendTextMessage("2222222222", null, message, null, null);
+                smsManager.sendTextMessage("3333333333", null, message, null, null);
+                smsManager.sendTextMessage("44444444444", null, message, null, null);
+
+            }
+
+        });
+        go_back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(alert_setup.this, main_911.class);
+                alert_setup.this.startActivity(intent);
+
+            }
+
+        });
     }
 
 

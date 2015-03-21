@@ -83,4 +83,31 @@
             android:textColor="@string/color3"/>
     </RadioGroup>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Alert Mode"
+        android:id="@+id/alert_mode_button"
+        android:textSize="50dp"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:text="This will send a text to your contacts, with how you're feeling and to know to watch for another text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comment"
+        android:textSize="10dp"
+        android:layout_below="@+id/alert_mode_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go back"
+        android:id="@+id/go_back_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
