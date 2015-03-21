@@ -1,5 +1,6 @@
 package hackfsu.safecrumbs;
 
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,11 +14,29 @@ import android.util.Log;
 
 public class MainActivity extends ActionBarActivity {
     final String preferenceName = "MyPreferenceFile";
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        checkLogging();
+        button = (Button) findViewById(R.id.enter);
+        //checkLogging();
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                SharedPreferences settings = getSharedPreferences(preferenceName, MODE_PRIVATE);
+                boolean isFirstTime = settings.getBoolean("isFirstTime", true);
+                if(isFirstTime) {
+                    settings.edit().putBoolean("isFirstTime", false).commit();
+                    Intent intent = new Intent(MainActivity.this, main_911.class);
+                    MainActivity.this.startActivity(intent);
+                } else {
+                    Intent intent = new Intent();
+                }
+            }
+
+        });
     }
 
 
@@ -47,9 +66,10 @@ public class MainActivity extends ActionBarActivity {
         SharedPreferences settings = getSharedPreferences(preferenceName, 0);
         boolean isFirstTime = settings.getBoolean("isFirstTime", true);
         if (isFirstTime) {
-            Intent intent = new Intent("com.Android.main_911");
             Log.d("Comments", "First time");
             settings.edit().putBoolean("isFirstTime", false).commit();
+            Intent intent = new Intent(MainActivity.this, main_911.class);
+            MainActivity.this.startActivity(intent);
 
         }else{
             Intent intent = new Intent("com.Android.main_911");

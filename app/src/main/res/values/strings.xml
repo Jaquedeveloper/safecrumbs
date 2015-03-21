@@ -3,6 +3,7 @@
 
     <string name="app_name">safecrumbs</string>
     <string name="action_settings">Settings</string>
+    <string name="enter">Enter</string>
     <string name="Call_911">Call_911</string>
     <string name="welcome">welcome</string>
     <string name="title_activity_main_911">main_911</string>
