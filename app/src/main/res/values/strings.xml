@@ -15,6 +15,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_settings">settings</string>
 
+<<<<<<< HEAD
     <string name="color">#65b4ce</string>
     <string name="color2">#F93324</string>
     <string name="color3">#457AB1</string>
@@ -25,6 +26,10 @@
     <string name="color8">#A997C4</string>
 
 
+=======
+    <string name="placeholder_search">Search</string>
+    <string name="ok">ok</string>
+>>>>>>> 7f2598cb650cc8da4aa2f41dc2a54c312bae92a2
 
 
 

@@ -10,6 +10,7 @@ import android.view.View;
 
 public class alert_setup extends ActionBarActivity {
     String message;
+    int alert_time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,14 @@ public class alert_setup extends ActionBarActivity {
             case R.id.in_danger:
                 if (checked)
                     message = "I'm in danger!!";
+                    break;
+            case R.id.alert_30:
+                if(checked)
+                    alert_time = 30;
+                    break;
+            case R.id.alert_1hr:
+                if(checked)
+                    alert_time = 60;
                     break;
         }
     }

@@ -50,15 +50,20 @@ public class MainActivity extends ActionBarActivity {
     public void checkLogging(){
         SharedPreferences settings = getSharedPreferences(preferenceName, 0);
 
+        //
         boolean isFirstTime = settings.getBoolean("isFirstTime", true);
-        buildAlertDialog("Shared",Boolean.toString(isFirstTime));
         if (isFirstTime) {
-            Intent intent = new Intent("com.Android.main_911");
-            //startActivity(intent);
-        }else{
+            buildAlertDialog("Shared",Boolean.toString(isFirstTime));
             settings.edit().putBoolean("isFirstTime", false).commit();
             final int request_code = 1010;
-            startActivityForResult(new Intent(MainActivity.this,ContactPicker.class),request_code);
+            //startActivityForResult(new Intent(this,ContactPicker.class),request_code);
+            // Intent intent = new Intent("com.Android.main_911");
+            //startActivity(intent);
+        }else{
+            buildAlertDialog("Shared",Boolean.toString(isFirstTime));
+//            settings.edit().putBoolean("isFirstTime", false).commit();
+//            final int request_code = 1010;
+//            startActivityForResult(new Intent(this,ContactPicker.class),request_code);
         }
     }
 

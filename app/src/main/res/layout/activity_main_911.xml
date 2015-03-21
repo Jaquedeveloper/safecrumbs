@@ -11,7 +11,7 @@
         android:textSize="70dp"
         android:id="@+id/safety_crumbs"
         android:textAlignment="center"
-        android:textColor="@string/color"
+        android:textColor="@color/color"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -24,7 +24,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+<<<<<<< HEAD
         android:textColor="@string/color2"
+=======
+        android:textColor="@color/color2"
+>>>>>>> 7f2598cb650cc8da4aa2f41dc2a54c312bae92a2
         android:layout_toLeftOf="@+id/settings"
         android:layout_toStartOf="@+id/settings"
         android:layout_alignTop="@+id/settings" />
