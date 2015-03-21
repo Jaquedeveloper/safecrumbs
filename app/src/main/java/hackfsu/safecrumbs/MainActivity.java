@@ -6,7 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.SharedPreferences;
 import android.content.Intent;
-import android.content.Context;
+import android.view.View;
+import android.widget.Button;
 import android.util.Log;
 
 
@@ -42,11 +43,22 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    Button call_911 = (Button) findViewById(R.id.callButton);
+    call_911.setOnClickListerner(new View.onClickListener()
+        {
+        public void onClick (View v){
+        Intent i = new Intent(Intent.ACTION_DIAL);
+        String p = "tel:" + getString(R.string.phone_number);
+        i.setData(Uri.parse(p));
+        startActivity(i);
+        }
+    });
+
     public void checkLogging(){
         SharedPreferences settings = getSharedPreferences(preferenceName, 0);
         boolean isFirstTime = settings.getBoolean("isFirstTime", true);
         if (isFirstTime) {
-            //do something when run first time
+            //Intent intent = new Intent(this, );
             Log.d("Comments", "First time");
             settings.edit().putBoolean("isFirstTime", false).commit();
 

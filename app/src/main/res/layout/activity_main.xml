@@ -10,6 +10,23 @@
         android:textSize="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/" />
+        android:id="@+id/welcome" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call 911"
+        android:id="@+id/callButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="114dp"
+        android:textSize="70dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/callState"
+        android:layout_below="@+id/callButton"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

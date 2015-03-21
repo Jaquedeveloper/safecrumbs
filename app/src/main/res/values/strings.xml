@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">safecrumbs</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Call_911">Call_911</string>
+    <string name="welcome">welcome</string>
 
 </resources>
