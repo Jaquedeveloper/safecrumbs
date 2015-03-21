@@ -1,30 +1,44 @@
 package hackfsu.safecrumbs;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.SharedPreferences;
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.util.Log;
+import android.view.View.OnClickListener;
 
 
-public class MainActivity extends ActionBarActivity {
-    final String preferenceName = "MyPreferenceFile";
+public class main_911 extends ActionBarActivity {
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        checkLogging();
+        setContentView(R.layout.activity_main_911);
+        button = (Button) findViewById(R.id.callButton);
+
+        // add button listener
+        button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:5714319430"));
+                startActivity(callIntent);
+
+            }
+
+        });
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main_911, menu);
         return true;
     }
 
@@ -43,16 +57,4 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void checkLogging(){
-        SharedPreferences settings = getSharedPreferences(preferenceName, 0);
-        boolean isFirstTime = settings.getBoolean("isFirstTime", true);
-        if (isFirstTime) {
-            Intent intent = new Intent("com.Android.main_911");
-            Log.d("Comments", "First time");
-            settings.edit().putBoolean("isFirstTime", false).commit();
-
-        }else{
-            Intent intent = new Intent("com.Android.main_911");
-        }
-    }
 }
