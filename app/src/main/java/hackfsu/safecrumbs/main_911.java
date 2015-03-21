@@ -12,15 +12,18 @@ import android.view.View.OnClickListener;
 
 
 public class main_911 extends ActionBarActivity {
-    Button button;
+    Button button_911;
+    Button button_alert_setup;
+    Button button_settings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_911);
-        button = (Button) findViewById(R.id.callButton);
-
+        button_911 = (Button) findViewById(R.id.callButton);
+        button_alert_setup = (Button) findViewById(R.id.alert_setup);
+        button_settings = (Button) findViewById(R.id.settings);
         // add button listener
-        button.setOnClickListener(new OnClickListener() {
+        button_911.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -28,6 +31,28 @@ public class main_911 extends ActionBarActivity {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:5714319430"));
                 startActivity(callIntent);
+
+            }
+
+        });
+        button_alert_setup.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(main_911.this, alert_setup.class);
+                main_911.this.startActivity(intent);
+
+            }
+
+        });
+        button_settings.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(main_911.this, settings.class);
+                main_911.this.startActivity(intent);
 
             }
 
