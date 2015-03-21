@@ -24,7 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android: android:textColor="@string/color2"
+        android:textColor="@string/color2"
         android:layout_toLeftOf="@+id/settings"
         android:layout_toStartOf="@+id/settings"
         android:layout_alignTop="@+id/settings" />

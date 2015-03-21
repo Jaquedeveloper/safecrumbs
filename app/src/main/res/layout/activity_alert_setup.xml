@@ -9,16 +9,19 @@
     <TextView android:text="Alert Setup" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:textColor="@string/color6"/>
 
-    <TextView android:text="I'm feeling:" android:layout_width="wrap_content"
+
+    <TextView android:text="Current Status:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:id="@+id/textView2"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="@string/color6"/>
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -32,20 +35,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Uneasy"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@string/color4"/>
         <RadioButton android:id="@+id/unsafe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Unsafe"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@string/color5"/>
         <RadioButton android:id="@+id/in_danger"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="In Danger"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android: android:textColor="@string/color2"/>
     </RadioGroup>
 
-    <TextView android:text="Tell contacts if I don't check in within:"
+    <TextView android:text="Notify contacts if I don't check in within:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tell_contact"
@@ -53,7 +59,8 @@
         android:layout_marginTop="33dp"
         android:layout_below="@+id/radioGroup1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@string/color6"/>
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -65,12 +72,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30 Minutes"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@string/color8"/>
+
         <RadioButton android:id="@+id/alert_1hr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="An hour"
-            android:onClick="onRadioButtonClicked"/>
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@string/color3"/>
     </RadioGroup>
 
 </RelativeLayout>
