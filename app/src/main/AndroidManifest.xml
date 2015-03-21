@@ -3,6 +3,7 @@
     package="hackfsu.safecrumbs" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -18,8 +19,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ContactPicker"
+            android:parentActivityName=".MainActivity">
+            </activity>
+        <activity
             android:name=".main_911"
             android:label="@string/title_activity_main_911" >
+        </activity>
+        <activity
+            android:name=".alert_setup"
+            android:label="@string/alert_setup">
         </activity>
     </application>
 

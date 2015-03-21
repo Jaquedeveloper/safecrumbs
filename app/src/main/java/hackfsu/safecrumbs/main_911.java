@@ -27,33 +27,30 @@ public class main_911 extends ActionBarActivity {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:5714319430"));
                 startActivity(callIntent);
-
             }
 
         });
+
+
         button_alert_setup.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(main_911.this, alert_setup.class);
                 main_911.this.startActivity(intent);
-
             }
 
         });
+
         button_settings.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(main_911.this, settings.class);
                 main_911.this.startActivity(intent);
-
             }
 
         });

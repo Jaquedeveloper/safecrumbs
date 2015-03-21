@@ -21,7 +21,18 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button button = (Button) findViewById(R.id.button_enter);
         checkLogging();
+
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SharedPreferences settings = getSharedPreferences(preferenceName, 0);
+                boolean isFirstTime2 = settings.getBoolean("isFirstTime", true);
+                final int request_code = 1010;
+                startActivityForResult(new Intent(MainActivity.this,ContactPicker.class),request_code);
+            }
+        });
     }
 
 
@@ -49,21 +60,14 @@ public class MainActivity extends ActionBarActivity {
 
     public void checkLogging(){
         SharedPreferences settings = getSharedPreferences(preferenceName, 0);
-
-        //
         boolean isFirstTime = settings.getBoolean("isFirstTime", true);
-        if (isFirstTime) {
-            buildAlertDialog("Shared",Boolean.toString(isFirstTime));
+        if(isFirstTime) {
             settings.edit().putBoolean("isFirstTime", false).commit();
-            final int request_code = 1010;
-            //startActivityForResult(new Intent(this,ContactPicker.class),request_code);
-            // Intent intent = new Intent("com.Android.main_911");
-            //startActivity(intent);
+            int request_code = 1010;
         }else{
-            buildAlertDialog("Shared",Boolean.toString(isFirstTime));
-//            settings.edit().putBoolean("isFirstTime", false).commit();
-//            final int request_code = 1010;
-//            startActivityForResult(new Intent(this,ContactPicker.class),request_code);
+            Intent i = new Intent(this,main_911.class);
+            startActivity(i);
+            finish();
         }
     }
 
@@ -81,6 +85,31 @@ public class MainActivity extends ActionBarActivity {
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode,int resultCode,Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if(resultCode==RESULT_OK && !data.getExtras().isEmpty() && data.getExtras().containsKey("selectedContacts"))
+        {
+
+            Object[] objArray = (Object[])data.getExtras().getSerializable("selectedContacts");
+            String selectedContacts[][]=null;
+            if(objArray!=null)
+            {
+                selectedContacts = new String[objArray.length][];
+                for(int i=0;i<objArray.length;i++)
+                {
+                    selectedContacts[i] = (String[]) objArray[i];
+                }
+
+                //Now selectedContacts[] contains the selected contacts
+            }
+        }
+
     }
 
 }
