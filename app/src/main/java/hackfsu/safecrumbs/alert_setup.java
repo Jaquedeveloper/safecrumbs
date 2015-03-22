@@ -1,7 +1,5 @@
 package hackfsu.safecrumbs;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.location.LocationListener;
+import android.location.Location;
+import android.location.LocationManager;
+import android.content.Context;
 import android.view.View;
 import android.telephony.SmsManager;
 import android.content.SharedPreferences;
@@ -21,6 +23,8 @@ public class alert_setup extends ActionBarActivity {
     Button go_back;
     final String agenda = "agenda";
 
+    double lat;
+    double lon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,29 +39,17 @@ public class alert_setup extends ActionBarActivity {
             public void onClick(View arg0) {
 
                 SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage("8506612415", null, message, null, null);
+                /*smsManager.sendTextMessage("1111111111", null, message, null, null);
+                smsManager.sendTextMessage("2222222222", null, message, null, null);
+                smsManager.sendTextMessage("3333333333", null, message, null, null);
+                smsManager.sendTextMessage("44444444444", null, message, null, null);*/
+                Intent intent = new Intent(alert_setup.this, alert_on.class);
+                alert_setup.this.startActivity(intent);
 
-                SharedPreferences agen = getSharedPreferences("agenda",0);
-                String con = agen.getString("contacts","default");
-
-                if(agen.contains("contacts")){
-                    String contacts = agen.getString("contacts","default");
-
-                    String[] contact_item = contacts.split("\\|");
-
-                    for(int i = 0; i<contact_item.length;i++){
-                        smsManager.sendTextMessage(contact_item[i], null, message, null, null);
-                    }
-
-                    Intent intent = new Intent(alert_setup.this, alert_on.class);
-                    startActivity(intent);
-                }else{
-                    Intent i = new Intent(alert_setup.this,ContactPicker.class);
-                    startActivity(i);
-                }
             }
 
         });
-
         go_back.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -121,21 +113,5 @@ public class alert_setup extends ActionBarActivity {
                     alert_time = 60;
                     break;
         }
-    }
-
-    public void buildAlertDialog(String title,String message){
-        // 1. Instantiate an AlertDialog.Builder with its constructor
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // 2. Chain together various setter methods to set the dialog characteristics
-        builder.setMessage(message)
-                .setTitle(title)
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                });
-        // 3. Get the AlertDialog from create()
-        AlertDialog dialog = builder.create();
-        dialog.show();
     }
 }
