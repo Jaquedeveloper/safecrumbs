@@ -13,10 +13,12 @@ import android.view.View.OnClickListener;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.widget.Toast;
+import android.content.SharedPreferences.Editor;
 
 
 public class MainActivity extends ActionBarActivity {
     final String preferenceName = "MyPreferenceFile";
+    final String agenda = "agenda";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,26 +95,29 @@ public class MainActivity extends ActionBarActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
 
-
         if(resultCode==RESULT_OK && !data.getExtras().isEmpty() && data.getExtras().containsKey("selectedContacts"))
         {
-
             Object[] objArray = (Object[])data.getExtras().getSerializable("selectedContacts");
             String selectedContacts[][]=null;
             if(objArray!=null)
             {
                 selectedContacts = new String[objArray.length][];
+                String tel = "";
+                SharedPreferences agendasharedPreferencesfile = getSharedPreferences(agenda, 0);
                 for(int i=0;i<objArray.length;i++)
                 {
                     selectedContacts[i] = (String[]) objArray[i];
+                    tel += selectedContacts[i][2].toString() + "|";
                 }
+
+                Editor edit = agendasharedPreferencesfile.edit();
+                edit.putString("contacts", tel);
+                edit.commit();
+                Intent i = new Intent(this,alert_setup.class);
+                startActivity(i);
+                finish();
                 //Now selectedContacts[] contains the selected contacts
             }
-
-            for(int j=0; j<= selectedContacts.length; j++){
-                buildAlertDialog("saved",selectedContacts[j].toString());
-            }
-
 
         }
 
