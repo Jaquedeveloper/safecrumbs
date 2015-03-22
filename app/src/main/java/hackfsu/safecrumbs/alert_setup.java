@@ -41,7 +41,7 @@ public class alert_setup extends ActionBarActivity implements LocationListener {
                 getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER, 5000, 10, this);
-        
+
 
         setContentView(R.layout.activity_alert_setup);
 
