@@ -4,7 +4,8 @@
     xmlns:android1="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactPicker" >
+    tools:context=".ContactPicker"
+    android:background="@color/color">
     <Button
         android:id="@+id/btnDone"
         android:layout_width="wrap_content"
@@ -12,7 +13,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/done" />
+        android:text="@string/done"
+        android:textColor="@color/color3"/>
     <EditText
         android:id="@+id/txt_searchContact"
         android:layout_width="match_parent"
