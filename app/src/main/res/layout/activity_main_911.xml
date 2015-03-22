@@ -13,31 +13,8 @@
         android:id="@+id/safety_crumbs"
         android:textAlignment="center"
         android:textColor="@color/color"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9 - 1 - 1"
-        android:id="@+id/callButton"
-        android:textSize="36dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/color2"
-        android:layout_toLeftOf="@+id/settings"
-        android:layout_toStartOf="@+id/settings"
-        android:layout_alignTop="@+id/settings" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:id="@+id/settings"
-        android:textSize="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/alert_setup"
-        android:layout_alignEnd="@+id/alert_setup" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,8 +22,8 @@
         android:id="@+id/alert_setup"
         android:textSize="60dp"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,5 +31,32 @@
         android:id="@+id/callState"
         android:layout_below="@+id/callButton"
         android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:id="@+id/settings"
+            android:textSize="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 - 1 - 1"
+            android:id="@+id/callButton"
+            android:textSize="36dp"
+            android:textColor="@color/color2"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
 
 </RelativeLayout>

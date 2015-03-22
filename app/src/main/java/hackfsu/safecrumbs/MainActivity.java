@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View.OnClickListener;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -105,9 +106,14 @@ public class MainActivity extends ActionBarActivity {
                 {
                     selectedContacts[i] = (String[]) objArray[i];
                 }
-
                 //Now selectedContacts[] contains the selected contacts
             }
+
+            for(int j=0; j<= selectedContacts.length; j++){
+                buildAlertDialog("saved",selectedContacts[j].toString());
+            }
+
+
         }
 
     }
