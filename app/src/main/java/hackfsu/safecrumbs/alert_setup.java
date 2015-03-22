@@ -1,41 +1,34 @@
 package hackfsu.safecrumbs;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.telephony.SmsManager;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.location.LocationListener;
 import android.location.Location;
 import android.location.LocationManager;
 import android.content.Context;
+import android.view.View;
+import android.telephony.SmsManager;
+import android.content.SharedPreferences;
 
-public class alert_setup extends ActionBarActivity implements LocationListener {
+
+public class alert_setup extends ActionBarActivity {
     String message;
     int alert_time;
     Button alert_mode_button;
     Button go_back;
+    final String agenda = "agenda";
+
     double lat;
     double lon;
     @Override
-    public void onProviderDisabled(String provider) {}
-
-    @Override
-    public void onProviderEnabled(String provider) {}
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {}
-
-    public void onLocationChanged(Location loc) {
-        lat = loc.getLatitude();
-        lon = loc.getLongitude();
-    }
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 
         LocationManager locationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
@@ -43,27 +36,20 @@ public class alert_setup extends ActionBarActivity implements LocationListener {
                 LocationManager.GPS_PROVIDER, 5000, 10, this);
 
 
+=======
+>>>>>>> 1972febbdabf55afbeb6c775ab427f66f801439f
         setContentView(R.layout.activity_alert_setup);
-
         alert_mode_button = (Button) findViewById(R.id.alert_mode_button);
         go_back = (Button) findViewById(R.id.go_back_button);
+
 
         alert_mode_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                String lat2 = Double.toString(lat);
-                String long2 = Double.toString(lon);
-                message = "";
-
-                message += "Coordinates are (";
-                message += lat2;
-                message += " , ";
-                message += long2;
-                message += ")";
                 SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage("4048631374", null, message, null, null);
+                smsManager.sendTextMessage("8506612415", null, message, null, null);
                 /*smsManager.sendTextMessage("1111111111", null, message, null, null);
                 smsManager.sendTextMessage("2222222222", null, message, null, null);
                 smsManager.sendTextMessage("3333333333", null, message, null, null);

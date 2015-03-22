@@ -28,7 +28,7 @@ public class main_911 extends ActionBarActivity {
             @Override
             public void onClick(View arg0) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:911"));
+                callIntent.setData(Uri.parse("3219782380"));
                 startActivity(callIntent);
             }
 
