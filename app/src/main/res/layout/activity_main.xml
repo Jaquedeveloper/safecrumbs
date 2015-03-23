@@ -9,36 +9,6 @@
     tools:context=".MainActivity"
     android:background="@color/material_blue_grey_800">
 
-    <TextView
-        android:text="@string/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="70dp"
-        android:id="@+id/welcome"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" 
-        android:textColor="@color/color9"/>
-
-    <TextView
-        android:text="To"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="70dp"
-        android:id="@+id/to"
-        android:layout_below="@+id/welcome"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/color9"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter"
-        android:id="@+id/button_enter"
-        android:textSize="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -23,16 +23,12 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button_enter);
         checkLogging();
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 SharedPreferences settings = getSharedPreferences(preferenceName, 0);
-                boolean isFirstTime2 = settings.getBoolean("isFirstTime", true);
-                final int request_code = 1010;
                 startActivityForResult(new Intent(MainActivity.this,ContactPicker.class),request_code);
             }
         });
@@ -61,30 +57,11 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void checkLogging(){
-        SharedPreferences settings = getSharedPreferences(preferenceName, 0);
-        boolean isFirstTime = settings.getBoolean("isFirstTime", true);
-        if(isFirstTime) {
-            settings.edit().putBoolean("isFirstTime", false).commit();
-            int request_code = 1010;
-        }else{
-            Intent i = new Intent(this,main_911.class);
-            startActivity(i);
-            finish();
-        }
-    }
 
     public void buildAlertDialog(String title,String message){
         // 1. Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         // 2. Chain together various setter methods to set the dialog characteristics
-        builder.setMessage(message)
-                .setTitle(title)
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                });
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
         dialog.show();
@@ -97,25 +74,10 @@ public class MainActivity extends ActionBarActivity {
 
         if(resultCode==RESULT_OK && !data.getExtras().isEmpty() && data.getExtras().containsKey("selectedContacts"))
         {
-            Object[] objArray = (Object[])data.getExtras().getSerializable("selectedContacts");
-            String selectedContacts[][]=null;
-            if(objArray!=null)
-            {
-                selectedContacts = new String[objArray.length][];
-                String tel = "";
-                SharedPreferences agendasharedPreferencesfile = getSharedPreferences(agenda, 0);
-                for(int i=0;i<objArray.length;i++)
-                {
-                    selectedContacts[i] = (String[]) objArray[i];
-                    tel += selectedContacts[i][2].toString() + "|";
-                }
-
                 Editor edit = agendasharedPreferencesfile.edit();
                 edit.putString("contacts", tel);
                 edit.commit();
-                Intent i = new Intent(this,alert_setup.class);
-                startActivity(i);
-                finish();
+
                 //Now selectedContacts[] contains the selected contacts
             }
 
