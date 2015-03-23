@@ -60,17 +60,6 @@ public class alert_setup extends ActionBarActivity {
             }
 
         });
-        go_back.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                Intent intent = new Intent(alert_setup.this, main_911.class);
-                alert_setup.this.startActivity(intent);
-
-            }
-
-        });
     }
 
 
