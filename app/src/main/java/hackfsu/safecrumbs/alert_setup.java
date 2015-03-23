@@ -5,15 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.location.LocationListener;
-import android.location.Location;
 import android.location.LocationManager;
 import android.content.Context;
-import android.view.View;
-import android.telephony.SmsManager;
-import android.content.SharedPreferences;
 
 
 public class alert_setup extends ActionBarActivity {
